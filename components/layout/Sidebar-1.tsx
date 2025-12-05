@@ -1,4 +1,4 @@
-export default function Sidebar() {
+export default function Sidebar1() {
   return (
     <aside className="w-[38px] bg-[#111953]  text-white min-h-screen">
       <div className="flex  flex-col items-center gap-4 mt-1">
