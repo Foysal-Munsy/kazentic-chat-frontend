@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function page() {
-  return <div>dms</div>;
+  return <div>It would be Message area</div>;
 }

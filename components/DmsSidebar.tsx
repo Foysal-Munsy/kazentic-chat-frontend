@@ -19,7 +19,7 @@ interface Post {
 export async function DmsSidebar() {
   const data = await fetch("http://localhost:3000/dms.json");
   const posts: Post[] = await data.json();
-  console.log(posts);
+  //   console.log(posts);
   return (
     <Sidebar
       collapsible="none"
