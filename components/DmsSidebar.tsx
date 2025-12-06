@@ -23,7 +23,7 @@ export async function DmsSidebar() {
   return (
     <Sidebar
       collapsible="none"
-      className="  min-h-[85vh] m-4 bg-white border rounded-md w-[291px] "
+      className="  min-h-auto m-4 bg-white border rounded-md w-[291px] "
     >
       <SidebarHeader className="text-[18px] font-semibold text-[#191F38]">
         DMs

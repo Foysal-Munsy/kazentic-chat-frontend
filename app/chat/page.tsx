@@ -1,7 +1,7 @@
 import { ChatSidebar } from "@/components/ChatSidebar";
 import { Separator } from "@/components/ui/separator";
 import { AttachSquare, Headphone, Notification, Send } from "iconsax-reactjs";
-import { EllipsisVertical, Paperclip, PinIcon } from "lucide-react";
+import { EllipsisVertical, PinIcon } from "lucide-react";
 
 export default function Chat() {
   return (
@@ -30,6 +30,7 @@ export default function Chat() {
         </div>
         <Separator />
 
+        {/* middle area */}
         <div className="flex-1 p-4">
           <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-[#E2E8F0] text-sm text-[#94A3B8]">
             Conversation content goes here
