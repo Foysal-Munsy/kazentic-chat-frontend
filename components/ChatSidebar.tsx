@@ -33,7 +33,7 @@ export function ChatSidebar() {
   return (
     <Sidebar
       collapsible="none"
-      className="  min-h-[85vh] m-4 bg-white border rounded-md w-[200px] "
+      className="  min-h-[85vh] m-4 bg-white border rounded-md w-60 "
     >
       <div className="w-full h-px bg-[#EBEBEB] " />
       <SidebarContent>
