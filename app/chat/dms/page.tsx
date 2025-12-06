@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div>
       {/* className="  min-h-[85vh] m-4 bg-white border rounded-md w-[291px] " */}
-      <div className="m-4 flex  flex-col rounded-md border bg-white">
+      <div className="m-4 flex flex-col rounded-md border bg-white">
         {/* header */}
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center gap-2">
