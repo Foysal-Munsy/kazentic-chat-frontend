@@ -5,7 +5,7 @@ import {
   SidebarGroup,
 } from "@/components/ui/sidebar";
 
-import { Hashtag, Message, Message2 } from "iconsax-reactjs";
+import { Hashtag, Message, Messages2 } from "iconsax-reactjs";
 import { ChatSidebarItems } from "./ChatSidebarItems";
 
 const channels = [
@@ -23,7 +23,7 @@ const channels = [
   },
   {
     label: "DMs",
-    icon: <Message2 size={20} variant="Outline" color="#0F172A" />,
+    icon: <Messages2 size={20} variant="Outline" color="#0F172A" />,
     defaultOpen: false,
     dropdownItems: ["Alice", "Bob"],
   },

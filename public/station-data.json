@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Station One",
+        "description": "Lorem ipsum dolor sit amet consectetur. Viverra egestas ",
+        "logo": "S"
+    },
+    {
+        "id": 2,
+        "title": "Station Two",
+        "description": "Lorem ipsum dolor sit amet consectetur. Viverra egestas ",
+        "logo": "S"
+    },
+    {
+        "id": 3,
+        "title": "Station Three",
+        "description": "Lorem ipsum dolor sit amet consectetur. Viverra egestas ",
+        "logo": "S"
+    },
+    {
+        "id": 4,
+        "title": "Station Four",
+        "description": "Lorem ipsum dolor sit amet consectetur. Viverra egestas ",
+        "logo": "S"
+    },
+     {
+        "id": 5,
+        "title": "Station Five",
+        "description": "Lorem ipsum dolor sit amet consectetur. Viverra egestas ",
+        "logo": "S"
+    }
+]

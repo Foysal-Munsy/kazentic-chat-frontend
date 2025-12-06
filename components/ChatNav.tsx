@@ -1,4 +1,3 @@
-import React from "react";
 import NavItem from "./NavItem";
 import { Activity, Call, Home, Message, Messages2 } from "iconsax-reactjs";
 
@@ -8,16 +7,24 @@ const menuItems = [
     href: "/chat",
     icon: <Home color="#4157FE" size={20} variant="Bold" />,
   },
-  { label: "DMs", href: "/dms", icon: <Messages2 size={20} color="#4157FE" /> },
-  { label: "Calls", href: "/calls", icon: <Call size={20} color="#4157FE" /> },
+  {
+    label: "DMs",
+    href: "/chat/dms",
+    icon: <Messages2 size={20} color="#4157FE" />,
+  },
+  {
+    label: "Calls",
+    href: "/chat/calls",
+    icon: <Call size={20} color="#4157FE" />,
+  },
   {
     label: "Activity",
-    href: "/activity",
+    href: "/chat/activity",
     icon: <Activity size={20} color="#4157FE" />,
   },
   {
     label: "Station",
-    href: "/station",
+    href: "/chat/station",
     icon: <Message size={20} color="#4157FE" />,
   },
 ];
