@@ -13,5 +13,5 @@
 
 ## Goals
 - Mirror the Discord chat experience while preserving Kaznetic's visual identity.
-- Keep the interface lightweight, responsive, and ready for real-time messaging.
+
 
