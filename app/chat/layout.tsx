@@ -11,7 +11,7 @@ export default function ChatLayout({
     <div>
       <PageHeader first="Menu" second="Chats" />
       <ChatNav />
-      <main className="">{children}</main>
+      <main>{children}</main>
     </div>
   );
 }
