@@ -32,17 +32,17 @@ export function ChatSidebarItems({
         open ? "bg-[#F2F9FE]" : "hover:bg-gray-100"
       } rounded-md cursor-pointer`}
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between font-normal text-[14px]">
         <div className="flex items-center" style={{ color: textColor }}>
           <span className="flex items-center" style={{ color: textColor }}>
             {icon}
           </span>
-          <span className="ml-2 font-medium"> {label}</span>
+          <span className="ml-2"> {label}</span>
         </div>
 
         <div className="flex items-center gap-4">
           <a className="cursor-pointer">
-            <Plus size={20} color="#697588" />
+            <Plus size={16} color="#697588" />
           </a>
           <button
             type="button"
@@ -51,9 +51,9 @@ export function ChatSidebarItems({
             className="cursor-pointer"
           >
             {open ? (
-              <ArrowDown2 size={20} variant="Outline" color={highlightColor} />
+              <ArrowDown2 size={16} variant="Outline" color={highlightColor} />
             ) : (
-              <ArrowRight2 size={20} variant="Outline" color="#0F172A" />
+              <ArrowRight2 size={16} variant="Outline" color="#0F172A" />
             )}
             <span className="sr-only">Toggle channel dropdown</span>
           </button>
