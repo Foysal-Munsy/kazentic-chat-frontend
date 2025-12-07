@@ -5,6 +5,8 @@ import {
   SidebarGroupContent,
   SidebarHeader,
 } from "@/components/ui/sidebar";
+import { Input } from "./ui/input";
+import { Search } from "lucide-react";
 
 export default function CallsSidebarTop() {
   return (
@@ -18,7 +20,7 @@ export default function CallsSidebarTop() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent className="grid grid-cols-1 gap-2 ">
-            g
+            <Input placeholder="search..." />
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
