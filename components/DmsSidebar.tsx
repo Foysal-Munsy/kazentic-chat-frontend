@@ -6,20 +6,20 @@ import {
   SidebarGroupContent,
   SidebarHeader,
 } from "@/components/ui/sidebar";
+import dmsData from "@/public/dms.json";
 import DmsCard from "./DmsCard";
 
-interface Post {
+type Post = {
   id: number;
   image: string;
   name: string;
   message: string;
   action: boolean;
-}
+};
 
-export async function DmsSidebar() {
-  const data = await fetch("http://localhost:3000/dms.json");
-  const posts: Post[] = await data.json();
-  //   console.log(posts);
+const posts = dmsData as Post[];
+
+export function DmsSidebar() {
   return (
     <Sidebar
       collapsible="none"
