@@ -1,12 +1,15 @@
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import { Input } from "./ui/input";
 import { Search } from "lucide-react";
+import { Button } from "./ui/button";
+import { Setting, Setting2 } from "iconsax-reactjs";
 
 export default function CallsSidebarTop() {
   return (
@@ -19,11 +22,23 @@ export default function CallsSidebarTop() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupContent className="grid grid-cols-1 gap-2 ">
+          <SidebarGroupContent className="grid grid-cols-1 gap-4 ">
             <Input placeholder="search..." />
+            <Button className="bg-[#4157FE] rounded-md hover:bg-[#4135FE]">
+              Call
+            </Button>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <Button
+          className="w-[123px] text-[14px] rounded-md bg-[#EBEBEB] text-[#697588]"
+          variant={"outline"}
+        >
+          <Setting2 />
+          Default
+        </Button>
+      </SidebarFooter>
     </Sidebar>
   );
 }
