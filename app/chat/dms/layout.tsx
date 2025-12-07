@@ -6,7 +6,7 @@ export default function DmsLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex">
       <DmsSidebar />
-      <main>{children}</main>
+      <main className="w-full">{children}</main>
     </div>
   );
 }
