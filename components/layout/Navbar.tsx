@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Input } from "../ui/input";
 import { AudioLines, LayoutDashboardIcon } from "lucide-react";
 import { Notification } from "iconsax-reactjs";
 import { Avatar, AvatarImage } from "../ui/avatar";
@@ -11,9 +10,11 @@ export default function Navbar() {
   return (
     <div>
       <div className="flex items-center justify-between bg-linear-to-r from-[#111953] to-[#4157FE] h-[38px] ">
+        {/* Right */}
         <Link href="/">
           <Image src="/assets/logo.png" alt="logo" width={100} height={100} />
         </Link>
+        {/* Middle */}
         <div className="flex items-center">
           <div className="flex items-center bg-transparent rounded">
             <div className="relative">
@@ -22,12 +23,13 @@ export default function Navbar() {
                 type="search"
                 placeholder="Search..."
               />
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 text-white/90 pointer-events-none">
+              <div className="absolute right-2 top-0 bottom-0 border-l border-white/30 flex items-center px-1 text-white/90 pointer-events-none">
                 <AudioLines className="h-4 w-4" />
               </div>
             </div>
           </div>
         </div>
+        {/* Left */}
         <div className="text-white flex items-center gap-2 mr-2">
           <Notification />
           <LayoutDashboardIcon />
