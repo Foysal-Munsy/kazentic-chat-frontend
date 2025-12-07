@@ -6,8 +6,10 @@ import {
   SidebarGroupContent,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import dmsData from "@/public/dms.json";
-import DmsCard from "./DmsCard";
+import activityData from "@/public/activitydata.json";
+import NavItem from "./NavItem";
+import { Separator } from "./ui/separator";
+import ActivityCard from "./ActivityCard";
 
 type Post = {
   id: number;
@@ -17,38 +19,53 @@ type Post = {
   action: boolean;
 };
 
-const posts = dmsData as Post[];
-
+const posts = activityData as Post[];
+const menuItems = [
+  {
+    label: "All",
+    href: "/chat/activity",
+  },
+  {
+    label: "Mention",
+    href: "",
+  },
+  {
+    label: "Thread",
+    href: "",
+  },
+  {
+    label: "Reaction",
+    href: "",
+  },
+];
 export function ActivitySidebar() {
   return (
     <Sidebar
       collapsible="none"
-      className="  min-h-auto m-4 bg-white border rounded-md w-[291px] "
+      className="  min-h-[85vh] m-4 bg-white border rounded-md w-[291px] "
     >
       <SidebarHeader className="text-[18px] font-semibold text-[#191F38]">
         Activity
       </SidebarHeader>
+      <div>
+        <div className="flex h-[50px]  items-stretch ">
+          {menuItems.map((item) => (
+            <NavItem
+              key={item.href}
+              href={item.href}
+              label={item.label}
+              icon={""}
+            />
+          ))}
+        </div>
+        {/* separator */}
+        <Separator />
+      </div>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent className="grid grid-cols-1 gap-2 ">
             {posts.map((post) => (
-              <DmsCard
-                key={post.id}
-                image={post.image}
-                name={post.name}
-                message={post.message}
-                action={post.action}
-              />
-            ))}
-          </SidebarGroupContent>
-        </SidebarGroup>
-        <SidebarHeader className="text-[18px] font-semibold text-[#191F38]">
-          Non-Organizational DMs
-        </SidebarHeader>
-        <SidebarGroup>
-          <SidebarGroupContent className="grid grid-cols-1 gap-2 ">
-            {posts.slice(0, 2).map((post) => (
-              <DmsCard
+              <ActivityCard
                 key={post.id}
                 image={post.image}
                 name={post.name}

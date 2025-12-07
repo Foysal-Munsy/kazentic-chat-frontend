@@ -12,8 +12,8 @@ export default function page() {
     <div className="flex">
       <ActivitySidebar />
       {/* content area */}
-      <div>
-        <div className="m-4 flex flex-col rounded-md border bg-white">
+      <div className="w-full">
+        <div className="m-4 min-h-[85vh] flex  flex-col rounded-md border bg-white">
           {/* header */}
           <div className="flex items-center justify-between p-4">
             <div className="flex items-center gap-2">
@@ -54,7 +54,9 @@ export default function page() {
 
           {/* middle area */}
           <div className="flex-1 p-4">
-            <ConversationMock />
+            <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-[#E2E8F0] text-sm text-[#94A3B8]">
+              Conversation content goes here
+            </div>
           </div>
 
           {/* footer */}

@@ -1,0 +1,24 @@
+[
+    {
+        "id":1,
+        "name":"Foysal Munsy",
+        "message":"Riyad Ahsan has mentioned you in design team",
+        "image": "https://i.ibb.co.com/gZSv9m0Y/activity-image.jpg",
+        "action":true
+    },
+    {
+        "id":2,
+        "name":"MR FM",
+        "message":"Riyad Ahsan has mentioned you in design team",
+        "image": "https://i.ibb.co.com/gZSv9m0Y/activity-image.jpg",
+         "action":false
+    },
+    {
+        "id":3,
+        "name":"Zahid Nahid",
+        "message":"Riyad Ahsan has mentioned you in design team",
+        "image": "https://i.ibb.co.com/gZSv9m0Y/activity-image.jpg",
+        "action": false
+
+    }
+]
