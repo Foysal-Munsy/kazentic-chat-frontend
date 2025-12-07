@@ -22,7 +22,7 @@ const posts = [
     name: "Foysal Munsy",
     call: "in-coming",
     date: "31 Aug 2025",
-    action: "true",
+    action: true,
   },
 ];
 export default async function CallsContent() {
