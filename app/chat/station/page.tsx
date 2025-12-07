@@ -1,10 +1,13 @@
 import Card from "@/components/Card";
 import { ArrowUpRight, Plus } from "lucide-react";
 import Link from "next/link";
+import stationData from "@/public/station-data.json";
 export default async function page() {
-  const data = await fetch("http://localhost:3000/station-data.json");
-  const posts = await data.json();
+  // const data = await fetch("http://localhost:3000/station-data.json");
+  // const posts = await data.json();
   // console.log(posts);
+
+  const posts = stationData;
 
   return (
     <div className="container mx-auto px-4 py-4">

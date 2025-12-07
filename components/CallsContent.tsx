@@ -26,8 +26,6 @@ const posts = [
   },
 ];
 export default async function CallsContent() {
-  //   const data = await fetch("http://localhost:3000/dms.json");
-  //   const posts: Post[] = await data.json();
   return (
     <Sidebar
       collapsible="none"
