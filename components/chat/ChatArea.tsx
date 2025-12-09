@@ -1,5 +1,5 @@
 import { AttachSquare, Headphone, Notification, Send } from "iconsax-reactjs";
-import { Separator } from "./ui/separator";
+import { Separator } from "@/components/ui/separator";
 import { EllipsisVertical, PinIcon } from "lucide-react";
 
 export default function ChatArea() {
