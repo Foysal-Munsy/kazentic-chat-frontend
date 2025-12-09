@@ -1,44 +1,82 @@
+"use client";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
   SidebarHeader,
+  SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { Messages } from "iconsax-reactjs";
 import LinkItem from "../LinkItem";
+import { cn } from "@/lib/utils";
 
 export function AppSidebar() {
   const messagesCount = 12; // will be props later
+  const { state } = useSidebar();
+  const isCollapsed = state === "collapsed";
+
   return (
     <Sidebar
       collapsible="none"
-      className="  min-h-screen bg-white border-r rounded-tl-md w-[200px] "
+      className={cn(
+        "min-h-screen rounded-tl-md border-r bg-white transition-[width] duration-300",
+        isCollapsed ? "w-14" : "w-[200px]"
+      )}
     >
-      <SidebarHeader className="flex flex-row items-center gap-1">
-        <span className="bg-[#FDBF00] text-center rounded-[6px] h-6 w-6 text-white">
-          C
-        </span>
-        <div className="text-sm font-semibold   ">Carbon Stream </div>
+      <SidebarHeader
+        className={cn(
+          "flex items-center gap-2",
+          isCollapsed ? "justify-center" : "justify-between"
+        )}
+      >
+        <div
+          className={cn(
+            "flex items-center gap-2",
+            isCollapsed ? "justify-center" : ""
+          )}
+        >
+          {!isCollapsed && (
+            <span className="flex h-7 w-7 items-center justify-center rounded-[6px] bg-[#FDBF00] text-sm font-semibold text-white">
+              C
+            </span>
+          )}
+          {!isCollapsed && (
+            <div className="text-sm font-semibold text-[#1B2559]">
+              Carbon Stream
+            </div>
+          )}
+          <SidebarTrigger />
+        </div>
       </SidebarHeader>
       <div className="w-full h-px bg-[#EBEBEB] " />
       <SidebarContent>
         <SidebarGroup>
           <LinkItem href="/chat">
-            <div className="flex items-center">
+            <div
+              className={cn(
+                "flex items-center gap-2",
+                isCollapsed && "justify-center"
+              )}
+            >
               <Messages size={18} color="#4157FE" variant="Bold" />
-              <div className="rounded-md px-3 py-2 text-sm text-[#4157FE]">
-                Chat
-              </div>
+              {!isCollapsed && (
+                <div className="rounded-md px-3 py-2 text-sm text-[#4157FE]">
+                  Chat
+                </div>
+              )}
             </div>
-            <span className="bg-[#4157FE] text-center rounded-[6px] py-0 px-2.5 text-white">
-              {messagesCount}
-            </span>
+            {!isCollapsed && (
+              <span className="rounded-[6px] bg-[#4157FE] px-2.5 py-0 text-white">
+                {messagesCount}
+              </span>
+            )}
           </LinkItem>
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <div className="text-xs ">Footer area</div>
+        {!isCollapsed && <div className="text-xs ">Footer area</div>}
       </SidebarFooter>
     </Sidebar>
   );

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Sidebar1() {
   return (
     <aside className="w-[38px] bg-[#111953]  text-white min-h-screen">
@@ -10,6 +12,7 @@ export default function Sidebar1() {
         <button className="bg-linear-to-b from-[#FF4B00] to-[#FF9F00] text-center rounded-[6px] h-6 w-6">
           D
         </button>
+
         <button className="bg-linear-to-b from-[#059669] to-[#15BD6D] text-center rounded-[6px] h-6 w-6">
           L
         </button>
