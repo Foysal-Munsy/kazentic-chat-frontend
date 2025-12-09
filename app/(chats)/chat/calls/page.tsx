@@ -1,6 +1,6 @@
-import CallsContent from "@/components/CallsContent";
-import CallsSidebarBottom from "@/components/CallsSidebarBottom";
-import CallsSidebarTop from "@/components/CallsSidebarTop";
+import CallsContent from "@/components/chat/calls/CallsContent";
+import CallsSidebarBottom from "@/components/chat/calls/CallsSidebarBottom";
+import CallsSidebarTop from "@/components/chat/calls/CallsSidebarTop";
 import React from "react";
 
 export default function page() {

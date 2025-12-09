@@ -1,4 +1,4 @@
-import ChatNav from "@/components/ChatNav";
+import ChatNav from "@/components/chat/ChatNav";
 import PageHeader from "@/components/PageHeader";
 import React from "react";
 

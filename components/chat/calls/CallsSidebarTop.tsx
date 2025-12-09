@@ -6,10 +6,9 @@ import {
   SidebarGroupContent,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { Input } from "./ui/input";
-import { Search } from "lucide-react";
-import { Button } from "./ui/button";
-import { Setting, Setting2 } from "iconsax-reactjs";
+import { Setting2 } from "iconsax-reactjs";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function CallsSidebarTop() {
   return (

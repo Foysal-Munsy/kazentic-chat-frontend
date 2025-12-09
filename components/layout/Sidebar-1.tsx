@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Sidebar1() {
   return (
     <aside className="w-[38px] bg-[#111953]  text-white min-h-screen">

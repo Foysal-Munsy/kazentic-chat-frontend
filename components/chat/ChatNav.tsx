@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import NavItem from "./NavItem";
+
 import {
   Activity,
   Call,
@@ -10,6 +10,7 @@ import {
   Messages2,
 } from "iconsax-reactjs";
 import Link from "next/link";
+import NavItem from "../NavItem";
 
 const menuItems = [
   {

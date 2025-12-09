@@ -1,10 +1,4 @@
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarHeader,
-} from "@/components/ui/sidebar";
+import { SidebarHeader } from "@/components/ui/sidebar";
 import { CallMinus, Sort } from "iconsax-reactjs";
 
 import Image from "next/image";

@@ -7,9 +7,10 @@ import {
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import activityData from "@/public/activitydata.json";
-import NavItem from "./NavItem";
-import { Separator } from "./ui/separator";
+
 import ActivityCard from "./ActivityCard";
+import NavItem from "@/components/NavItem";
+import { Separator } from "@/components/ui/separator";
 
 type Post = {
   id: number;
@@ -27,15 +28,15 @@ const menuItems = [
   },
   {
     label: "Mention",
-    href: "",
+    href: "#1",
   },
   {
     label: "Thread",
-    href: "",
+    href: "#2",
   },
   {
     label: "Reaction",
-    href: "",
+    href: "#3",
   },
 ];
 export function ActivitySidebar() {

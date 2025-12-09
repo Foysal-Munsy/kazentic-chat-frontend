@@ -1,13 +1,21 @@
-import Card from "@/components/Card";
+import Card from "@/components/chat/station/Card";
 import { ArrowUpRight, Plus } from "lucide-react";
 import Link from "next/link";
 import stationData from "@/public/station-data.json";
+
+type Station = {
+  id: number;
+  title: string;
+  description: string;
+  logo: string;
+};
+
 export default async function page() {
   // const data = await fetch("http://localhost:3000/station-data.json");
   // const posts = await data.json();
   // console.log(posts);
 
-  const posts = stationData;
+  const posts = stationData as Station[];
 
   return (
     <div className="container mx-auto px-4 py-4">
@@ -34,7 +42,7 @@ export default async function page() {
       {/* content */}
       <div className="mt-8 grid grid-cols-4 gap-4">
         {Array.isArray(posts) && posts.length > 0 ? (
-          posts.map((post: any, idx: number) => (
+          posts.map((post, idx) => (
             <Card
               key={post.id ?? idx}
               logo={post.logo ?? post.title?.[0] ?? "S"}

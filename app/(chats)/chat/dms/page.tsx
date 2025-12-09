@@ -1,4 +1,5 @@
-import ConversationMock from "@/components/ConversationMock";
+import ConversationMock from "@/components/chat/ConversationMock";
+import { DmsSidebar } from "@/components/chat/dms/DmsSidebar";
 import { Separator } from "@/components/ui/separator";
 import { AttachSquare, Headphone, Notification, Send } from "iconsax-reactjs";
 import { EllipsisVertical, PinIcon } from "lucide-react";
@@ -6,9 +7,8 @@ import Image from "next/image";
 export default function page() {
   const status = "active";
   return (
-    <div>
-      {/* className="  min-h-[85vh] m-4 bg-white border rounded-md w-[291px] " */}
-
+    <div className="flex">
+      <DmsSidebar />
       <div className="m-4  min-h-[85vh] flex flex-col rounded-md border bg-white">
         {/* header */}
         <div className="flex items-center justify-between p-4">

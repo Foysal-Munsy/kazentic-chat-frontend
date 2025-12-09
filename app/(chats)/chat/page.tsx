@@ -1,4 +1,4 @@
-import { ChatSidebar } from "@/components/ChatSidebar";
+import { ChatSidebar } from "@/components/chat/ChatSidebar";
 import { Separator } from "@/components/ui/separator";
 import { AttachSquare, Headphone, Notification, Send } from "iconsax-reactjs";
 import { EllipsisVertical, PinIcon } from "lucide-react";

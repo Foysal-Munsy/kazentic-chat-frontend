@@ -1,5 +1,4 @@
-import { ActivitySidebar } from "@/components/ActivitySidebar";
-import ConversationMock from "@/components/ConversationMock";
+import { ActivitySidebar } from "@/components/chat/activity/ActivitySidebar";
 import { Separator } from "@/components/ui/separator";
 import { AttachSquare, Headphone, Notification, Send } from "iconsax-reactjs";
 import { EllipsisVertical, PinIcon } from "lucide-react";
