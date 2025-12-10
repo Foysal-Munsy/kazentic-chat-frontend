@@ -1,6 +1,8 @@
 import { CallIncoming, CallMinus, CallOutgoing } from "iconsax-reactjs";
 import Image from "next/image";
 
+type FilterType = "all" | "missed" | "in" | "out";
+
 const posts = [
   {
     id: 1,
@@ -68,10 +70,14 @@ const posts = [
     line: "green",
   },
 ];
-export default function HistoryCard() {
+
+export default function HistoryCard({ filter }: { filter: FilterType }) {
+  const filteredPosts =
+    filter === "all" ? posts : posts.filter((post) => post.action === filter);
+
   return (
     <div>
-      {posts.map((post) => (
+      {filteredPosts.map((post) => (
         <div key={post.id} className="mb-2.5">
           <div className="flex gap-2 items-center border border-[#EBEBEB] rounded-md p-3 h-[68px]">
             {/* image */}
