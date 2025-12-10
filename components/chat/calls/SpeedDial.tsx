@@ -1,3 +1,16 @@
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Sidebar,
   SidebarContent,
@@ -81,7 +94,7 @@ const posts = [
 export default function SpeedDial() {
   const header = " Speed Dial";
   const btn = (
-    <button className="border p-2 w-8 h-8 rounded-md flex items-center ">
+    <button className="border p-2 w-8 h-8 rounded-md flex items-center cursor-pointer">
       <UserAdd width={20} height={20} color="#4157FE" />
     </button>
   );
@@ -93,7 +106,42 @@ export default function SpeedDial() {
       <div className="w-[292px mx-auto] px-1.5 flex flex-col h-full">
         <SidebarHeader className="text-[18px]  flex flex-row justify-between items-center font-semibold text-[#191F38] shrink-0">
           {header}
-          {btn}
+
+          <Dialog>
+            <form>
+              <DialogTrigger asChild>{btn}</DialogTrigger>
+              <DialogContent className="w-[347px] h-[177px] rounded-[12px]">
+                <DialogHeader>
+                  <DialogTitle>Add to speed dial</DialogTitle>
+                </DialogHeader>
+
+                <div>
+                  <Input
+                    className="placeholder:text-[#B3B3B3] placeholder:font-normal placeholder:text-[14px] placeholder:-tracking-[5%] h-10 "
+                    placeholder="Type a name or number"
+                  />
+                </div>
+
+                <DialogFooter>
+                  <DialogClose asChild>
+                    <Button
+                      //   variant={"outline"}
+                      className="bg-[#FDFEFE] text-[#6F6F6F] font-normal text-[14px] border border-[#EBEBEB] w-[69px] h-8 cursor-pointer hover:bg-[#FDFEFE]"
+                    >
+                      Cancel
+                    </Button>
+                  </DialogClose>
+                  <Button
+                    type="submit"
+                    // variant={"outline"}
+                    className="bg-[#4157FE] w-[65px] h-8 font-normal cursor-pointer text-[14px] hover:bg-[#4157FE]"
+                  >
+                    Add
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </form>
+          </Dialog>
         </SidebarHeader>
         {/* className="w-[292px] mx-auto" */}
         <SidebarContent className="overflow-y-auto flex-1">
