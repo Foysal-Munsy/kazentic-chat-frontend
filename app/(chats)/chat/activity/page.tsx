@@ -15,6 +15,7 @@ export default function page() {
         <div className="m-4 min-h-[85vh] flex  flex-col rounded-md border bg-white">
           {/* header */}
           <div className="flex items-center justify-between p-4">
+            {/* header-left */}
             <div className="flex items-center gap-2">
               <div className="relative w-8 h-8">
                 <Image
@@ -32,19 +33,40 @@ export default function page() {
                 Riyad Ahsan
               </h1>
             </div>
+            {/* header-right */}
             <div>
               <div className="flex gap-2 text-[#697588]">
-                <button className="border p-2 rounded-md cursor-pointer">
-                  <Headphone size="16" variant="Outline" />
+                <button className="cursor-pointer">
+                  <Image
+                    src="/assets/svg/call.svg"
+                    alt="call"
+                    width={28}
+                    height={28}
+                  />
                 </button>
-                <button className="border p-2 rounded-md cursor-pointer">
-                  <Notification size={16} variant="Outline" />
+                <button className="cursor-pointer">
+                  <Image
+                    src="/assets/svg/video.svg"
+                    alt="call"
+                    width={28}
+                    height={28}
+                  />
                 </button>
-                <button className="border p-2 rounded-md cursor-pointer">
-                  <PinIcon size={16} />
+                <button className="cursor-pointer">
+                  <Image
+                    src="/assets/svg/add.svg"
+                    alt="call"
+                    width={28}
+                    height={28}
+                  />
                 </button>
-                <button className="border p-2 rounded-md cursor-pointer">
-                  <EllipsisVertical size={16} />
+                <button className="cursor-pointer">
+                  <Image
+                    src="/assets/svg/three-dot.svg"
+                    alt="call"
+                    width={28}
+                    height={28}
+                  />
                 </button>
               </div>
             </div>
