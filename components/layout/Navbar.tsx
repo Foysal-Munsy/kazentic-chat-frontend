@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { LayoutDashboardIcon, Search } from "lucide-react";
-import { Notification } from "iconsax-reactjs";
+import { ChevronDown, Search } from "lucide-react";
+
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { AvatarFallback } from "@radix-ui/react-avatar";
-import { Separator } from "../ui/separator";
+
 import { ButtonGroup, ButtonGroupSeparator } from "../ui/button-group";
+
 import {
   InputGroup,
   InputGroupAddon,
@@ -46,24 +47,36 @@ export default function Navbar() {
         </div>
         {/* Left */}
         <div className="text-white flex items-center gap-2 mr-2">
-          <Notification />
-          <LayoutDashboardIcon />
-          <Separator orientation="vertical" className="h-6 w-px bg-white/30" />
-          <div className="flex gap-2 items-center">
-            <Avatar>
-              <AvatarImage
-                src="https://i.ibb.co/6c782gQh/dms-image.png"
-                alt="avatar"
-                className="h-8 w-8 rounded-full object-cover"
-              />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            {/* <div>
-              <h3 className=" font-semibold  ">Foysal Munsy</h3>
-              <p className="text-[#FFFFFFB2] font-normal text-[12px] ">
-                foysal613@outlook.com
+          <Image
+            src="/assets/svg/bell-dot.svg"
+            alt="grid"
+            width={20}
+            height={20}
+          />
+          <Image
+            src="/assets/svg/ri_grid-fill.svg"
+            alt="grid"
+            width={20}
+            height={20}
+          />
+          <ButtonGroupSeparator className="w-7" />
+          {/* profile area */}
+          <div className="flex gap-2 items-center justify-center">
+            <Image
+              src="/assets/svg/Avatar2.svg"
+              alt="grid"
+              width={25}
+              height={25}
+            />
+            <div>
+              <h3 className="font-medium text-[13px] leading-none">Jhon Doe</h3>
+              <p className="font-normal text-[12px] text-[#FFFFFFB2] ">
+                john@kazentic.com
               </p>
-            </div> */}
+            </div>
+            <span>
+              <ChevronDown size={16} />
+            </span>
           </div>
         </div>
       </div>
