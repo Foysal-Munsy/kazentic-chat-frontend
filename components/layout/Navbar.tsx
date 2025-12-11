@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AudioLines, LayoutDashboardIcon } from "lucide-react";
+import { LayoutDashboardIcon, Search } from "lucide-react";
 import { Notification } from "iconsax-reactjs";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { AvatarFallback } from "@radix-ui/react-avatar";
 import { Separator } from "../ui/separator";
+import { ButtonGroup, ButtonGroupSeparator } from "../ui/button-group";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "../ui/input-group";
 
 export default function Navbar() {
   return (
@@ -16,18 +22,27 @@ export default function Navbar() {
         </Link>
         {/* Middle */}
         <div className="flex items-center">
-          <div className="flex items-center bg-transparent rounded">
-            <div className="relative">
-              <input
-                className="border border-[#FFFFFF33] bg-[rgba(255,255,255,0.1)] w-[364px] h-[27px] text-white placeholder-white pr-8 px-2 rounded-md"
-                type="search"
+          <ButtonGroup>
+            <InputGroup className="w-[364px] h-[27px] border-[#FFFFFF33] bg-[#E7E6E41A] rounded-md">
+              <InputGroupInput
                 placeholder="Search..."
+                className="placeholder:text-[#FFFFFF] text-white"
               />
-              <div className="absolute right-2 top-0 bottom-0 border-l border-white/30 flex items-center px-1 text-white/90 pointer-events-none">
-                <AudioLines className="h-4 w-4" />
-              </div>
-            </div>
-          </div>
+              <InputGroupAddon align="inline-start">
+                <Search color="#FFFFFF" />
+              </InputGroupAddon>
+              <ButtonGroupSeparator />
+              <span className="px-2">
+                {/* <AudioLines className="h-4 w-4" color="#FFFFFF" /> */}
+                <Image
+                  src="/assets/svg/ri_voice-ai-line.svg"
+                  alt="Sort"
+                  width={20}
+                  height={20}
+                />
+              </span>
+            </InputGroup>
+          </ButtonGroup>
         </div>
         {/* Left */}
         <div className="text-white flex items-center gap-2 mr-2">
