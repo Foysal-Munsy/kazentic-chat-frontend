@@ -160,7 +160,25 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        {!isCollapsed && <div className="text-xs ">Footer area</div>}
+        {!isCollapsed && (
+          <div className="mb-7">
+            {/* custom one */}
+            {/* <div
+              className="w-[178px] h-[129px] border rounded-xl bg-[#F2F9FE]"
+              style={{
+                boxShadow:
+                  "0px 8px 16px 0px rgba(0, 0, 0, 0.08), 0px 0px 4px 0px rgba(0, 0, 0, 0.04)",
+              }}
+            ></div> */}
+            {/* just to ensure the space  */}
+            <Image
+              src={"/assets/svg-sidebar/footer-frame.svg"}
+              alt="image"
+              width={200}
+              height={150}
+            />
+          </div>
+        )}
       </SidebarFooter>
     </Sidebar>
   );
