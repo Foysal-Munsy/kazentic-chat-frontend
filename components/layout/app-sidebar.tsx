@@ -60,11 +60,18 @@ const sidebarItems = [
 
 export function AppSidebar() {
   const messagesCount = 12; // will be props later
-  const { state, toggleSidebar, setOpen, isMobile } = useSidebar();
+  const { state, toggleSidebar, setOpen, isMobile, open } = useSidebar();
   const isCollapsed = state === "collapsed";
+  const iconSize = isCollapsed ? (isMobile ? 28 : 24) : 18;
+  const imageIconClasses = isCollapsed
+    ? "shrink-0 w-7 h-7 sm:w-8 sm:h-8"
+    : "shrink-0 w-[18px] h-[18px] sm:w-5 sm:h-5";
+  const messageIconClasses = isCollapsed
+    ? "shrink-0 w-7 h-7 sm:w-8 sm:h-8"
+    : "shrink-0 sm:w-5 sm:h-5";
   const handleToggle = () => {
     if (isMobile) {
-      setOpen((prev) => !prev);
+      setOpen(!open);
     }
     toggleSidebar();
   };
@@ -129,18 +136,21 @@ export function AppSidebar() {
                 >
                   <div
                     className={cn(
-                      "flex items-center justify-center shrink-0",
-                      isCollapsed ? "w-full" : ""
+                      "flex items-center justify-center",
+                      isCollapsed ? "w-full" : "",
+                      "shrink-0"
                     )}
                   >
                     {item.icon ? (
                       <Image
                         src={item.icon}
                         alt={item.label}
-                        width={18}
-                        height={18}
-                        className="shrink-0 w-[18px] h-[18px] sm:w-5 sm:h-5"
+                        width={iconSize}
+                        height={iconSize}
+                        className={imageIconClasses}
                         style={{
+                          width: iconSize,
+                          height: iconSize,
                           filter: isChat
                             ? "none"
                             : "brightness(0) saturate(100%)",
@@ -148,10 +158,10 @@ export function AppSidebar() {
                       />
                     ) : (
                       <Messages
-                        size={18}
+                        size={iconSize}
                         color={textColor}
                         variant="Bold"
-                        className="shrink-0 sm:w-5 sm:h-5"
+                        className={messageIconClasses}
                       />
                     )}
                   </div>
