@@ -14,7 +14,6 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { EmptyOutline } from "@/components/chat/station/EmptyOutline";
-import { Button } from "@/components/ui/button";
 
 type Station = {
   id: number;
@@ -57,7 +56,7 @@ export default async function page() {
                 <SheetTitle>Create New Station</SheetTitle>
               </SheetHeader>
               <Separator className="-mt-3" />
-              {/* sheet content */}
+              {/* sheet content from button  */}
               <div className="px-4">
                 {/* 1st area */}
                 <div className="flex flex-col gap-2">

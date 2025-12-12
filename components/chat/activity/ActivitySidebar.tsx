@@ -44,13 +44,13 @@ export function ActivitySidebar() {
   return (
     <Sidebar
       collapsible="none"
-      className="  min-h-[85vh] m-4 bg-white border rounded-md w-[291px] "
+      className="  min-h-[85vh] m-4 bg-[#FDFDFD] border rounded-md w-[291px] "
     >
       <SidebarHeader className="text-[18px] font-semibold text-[#191F38]">
         Activity
       </SidebarHeader>
       <div>
-        <div className="flex h-[50px]  items-stretch ">
+        <div className="flex h-[50px]  items-stretch text-[#697588] font-medium text-[14px] ">
           {menuItems.map((item) => (
             <NavItem
               key={item.href}
