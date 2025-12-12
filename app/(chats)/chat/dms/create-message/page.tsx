@@ -2,6 +2,7 @@ import { DmsSidebar } from "@/components/chat/dms/DmsSidebar";
 import { Separator } from "@/components/ui/separator";
 import { AttachSquare, Headphone, Notification, Send } from "iconsax-reactjs";
 import { EllipsisVertical, PinIcon } from "lucide-react";
+import Image from "next/image";
 export default function CreateMessage() {
   return (
     <div className="flex">
@@ -11,34 +12,56 @@ export default function CreateMessage() {
         {/* header */}
         <div className="p-4">
           <div className="flex items-center justify-between ">
+            {/* header-left */}
             <h1 className="text-[#191F38] font-semibold text-[20px]">
               New Message
             </h1>
+            {/* header-right */}
             <div>
               <div className="flex gap-2 text-[#697588]">
-                <button className="border p-2 rounded-md cursor-pointer">
-                  <Headphone size="16" variant="Outline" />
+                <button className="cursor-pointer">
+                  <Image
+                    src="/assets/svg/call.svg"
+                    alt="call"
+                    width={28}
+                    height={28}
+                  />
                 </button>
-                <button className="border p-2 rounded-md cursor-pointer">
-                  <Notification size={16} variant="Outline" />
+                <button className="cursor-pointer">
+                  <Image
+                    src="/assets/svg/video.svg"
+                    alt="call"
+                    width={28}
+                    height={28}
+                  />
                 </button>
-                <button className="border p-2 rounded-md cursor-pointer">
-                  <PinIcon size={16} />
+                <button className="cursor-pointer">
+                  <Image
+                    src="/assets/svg/add.svg"
+                    alt="call"
+                    width={28}
+                    height={28}
+                  />
                 </button>
-                <button className="border p-2 rounded-md cursor-pointer">
-                  <EllipsisVertical size={16} />
+                <button className="cursor-pointer">
+                  <Image
+                    src="/assets/svg/three-dot.svg"
+                    alt="call"
+                    width={28}
+                    height={28}
+                  />
                 </button>
               </div>
             </div>
           </div>
-          <p className="text-[#7F899C]">To : #channel, @someone, @email</p>
+          <p className="text-[#7F899C] mt-2">To : #channel, @someone, @email</p>
         </div>
         <Separator />
 
         {/* middle area */}
-        <div className="flex-1 p-4">
-          <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-[#E2E8F0] text-sm text-[#94A3B8]">
-            Conversation content goes here
+        <div className="flex-1 p-4 min-h-[63vh]">
+          <div className="flex h-full items-center justify-center rounded-lg   border-[#E2E8F0] text-sm text-[#94A3B8]">
+            {/* Conversation content goes here */}
           </div>
         </div>
 
@@ -62,7 +85,12 @@ export default function CreateMessage() {
               className=" text-[#4157FE]"
               aria-label="Send message"
             >
-              <Send size={18} variant="Bold" />
+              <Image
+                src={"/assets/svg/Send Button.svg"}
+                alt="send-btn"
+                height={18}
+                width={18}
+              />
             </button>
           </div>
         </div>

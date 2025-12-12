@@ -2,8 +2,8 @@ import DmsMessage from "@/components/chat/dms/DmsMessage";
 
 import { DmsSidebar } from "@/components/chat/dms/DmsSidebar";
 import { Separator } from "@/components/ui/separator";
-import { AttachSquare, Headphone, Notification, Send } from "iconsax-reactjs";
-import { EllipsisVertical, PinIcon } from "lucide-react";
+import { AttachSquare } from "iconsax-reactjs";
+
 import Image from "next/image";
 export default function page() {
   const status = "active";
@@ -95,7 +95,12 @@ export default function page() {
               className=" text-[#4157FE]"
               aria-label="Send message"
             >
-              <Send size={18} variant="Bold" />
+              <Image
+                src={"/assets/svg/Send Button.svg"}
+                alt="send-btn"
+                height={18}
+                width={18}
+              />
             </button>
           </div>
         </div>
