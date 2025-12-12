@@ -15,7 +15,7 @@ export default function LinkItem({ href, children }: LinkItemProps) {
   return (
     <a
       href={href}
-      className={`px-3 flex flex-row items-center cursor-pointer justify-between ${
+      className={`px-3 py-1 flex flex-row items-center rounded-md cursor-pointer justify-between ${
         active ? "bg-[#F2F9FE]" : ""
       }`}
     >

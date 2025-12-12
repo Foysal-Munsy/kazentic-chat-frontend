@@ -11,6 +11,53 @@ import {
 import { Messages } from "iconsax-reactjs";
 import LinkItem from "../LinkItem";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+const sidebarItems = [
+  {
+    id: 1,
+    label: "Dashboard",
+    href: "#1",
+    icon: "/assets/svg-sidebar/dashboard.svg",
+  },
+  {
+    id: 2,
+    label: "Manage",
+    href: "#2",
+    icon: "/assets/svg-sidebar/manage.svg",
+  },
+  {
+    id: 3,
+    label: "Time Tracker",
+    href: "#3",
+    icon: "/assets/svg-sidebar/time-tracker.svg",
+  },
+  { id: 4, label: "Tasks", href: "#4", icon: "/assets/svg-sidebar/task.svg" },
+  {
+    id: 5,
+    label: "Reports",
+    href: "#5",
+    icon: "/assets/svg-sidebar/report.svg",
+  },
+  { id: 6, label: "Email", href: "#6", icon: "/assets/svg-sidebar/email.svg" },
+  {
+    id: 7,
+    label: "Storage",
+    href: "#7",
+    icon: "/assets/svg-sidebar/storage.svg",
+  },
+  {
+    id: 8,
+    label: "Calender",
+    href: "#8",
+    icon: "/assets/svg-sidebar/calender.svg",
+  },
+  { id: 9, label: "Notes", href: "#9", icon: "/assets/svg-sidebar/note.svg" },
+  { id: 10, label: "HRM", href: "#10", icon: "/assets/svg-sidebar/hrm.svg" },
+  { id: 11, label: "CRM", href: "#11", icon: "/assets/svg-sidebar/crm.svg" },
+  { id: 12, label: "Chat", href: "/chat", icon: null, hasCount: true },
+  { id: 13, label: "Forms", href: "#13", icon: "/assets/svg-sidebar/form.svg" },
+];
 
 export function AppSidebar() {
   const messagesCount = 12; // will be props later
@@ -53,26 +100,63 @@ export function AppSidebar() {
       <div className="w-full h-px bg-[#EBEBEB] " />
       <SidebarContent>
         <SidebarGroup>
-          <LinkItem href="/chat">
-            <div
-              className={cn(
-                "flex items-center gap-2",
-                isCollapsed && "justify-center"
-              )}
-            >
-              <Messages size={18} color="#4157FE" variant="Bold" />
-              {!isCollapsed && (
-                <div className="rounded-md px-3 py-2 text-sm text-[#4157FE]">
-                  Chat
+          {sidebarItems.map((item) => {
+            const isChat = item.label === "Chat";
+            const textColor = isChat ? "#4157FE" : "#191F38";
+
+            return (
+              <LinkItem key={item.id} href={item.href}>
+                <div
+                  className={cn(
+                    "flex items-center",
+                    isCollapsed ? "justify-center w-full py-1" : "gap-2"
+                  )}
+                >
+                  <div
+                    className={cn(
+                      "flex items-center justify-center",
+                      isCollapsed ? "w-full" : ""
+                    )}
+                  >
+                    {item.icon ? (
+                      <Image
+                        src={item.icon}
+                        alt={item.label}
+                        width={20}
+                        height={20}
+                        className="shrink-0"
+                        style={{
+                          filter: isChat
+                            ? "none"
+                            : "brightness(0) saturate(100%)",
+                        }}
+                      />
+                    ) : (
+                      <Messages
+                        size={20}
+                        color={textColor}
+                        variant="Bold"
+                        className="shrink-0"
+                      />
+                    )}
+                  </div>
+                  {!isCollapsed && (
+                    <div
+                      className="rounded-md px-3 py-1 text-sm"
+                      style={{ color: textColor }}
+                    >
+                      {item.label}
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-            {!isCollapsed && (
-              <span className="rounded-[6px] bg-[#4157FE] px-2.5 py-0 text-white">
-                {messagesCount}
-              </span>
-            )}
-          </LinkItem>
+                {!isCollapsed && item.hasCount && (
+                  <span className="flex items-center justify-center rounded-[6px] bg-[#4157FE] px-2.5 text-white text-[13px] font-normal">
+                    {messagesCount}
+                  </span>
+                )}
+              </LinkItem>
+            );
+          })}
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
