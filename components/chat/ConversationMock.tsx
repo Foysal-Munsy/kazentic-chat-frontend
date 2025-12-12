@@ -109,14 +109,6 @@ function MessageRow(message: ConversationMessage) {
             <span className="whitespace-pre-line">{message.text}</span>
           </div>
         </div>
-        {/* <div className="mt-2 rounded-2xl bg-[#F6F8FF] px-4 py-3 text-sm text-[#0F172A]">
-          {message.highlight && (
-            <span className="font-semibold text-[#4157FE]">
-              {message.highlight}{" "}
-            </span>
-          )}
-          <span className="whitespace-pre-line">{message.text}</span>
-        </div> */}
 
         {message.attachment && (
           <div className="mt-3 rounded-2xl border border-[#E4E7EC] bg-white px-4 py-3 text-sm text-[#475569]">
@@ -131,11 +123,6 @@ function MessageRow(message: ConversationMessage) {
               {message.attachment.link}
             </Link>
             <p className="mt-2">{message.attachment.description}</p>
-            {/* {message.attachment.badge && (
-              <span className="mt-3 inline-flex items-center gap-2 rounded-lg border border-[#E4E7EC] px-3 py-2 text-xs font-semibold text-[#0F172A]">
-                {message.attachment.badge}
-              </span>
-            )} */}
           </div>
         )}
 
