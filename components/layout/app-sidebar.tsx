@@ -60,8 +60,14 @@ const sidebarItems = [
 
 export function AppSidebar() {
   const messagesCount = 12; // will be props later
-  const { state, toggleSidebar } = useSidebar();
+  const { state, toggleSidebar, setOpen, isMobile } = useSidebar();
   const isCollapsed = state === "collapsed";
+  const handleToggle = () => {
+    if (isMobile) {
+      setOpen((prev) => !prev);
+    }
+    toggleSidebar();
+  };
 
   return (
     <Sidebar
@@ -94,7 +100,7 @@ export function AppSidebar() {
             </div>
           )}
           <button
-            onClick={toggleSidebar}
+            onClick={handleToggle}
             className="shrink-0 p-1.5 hover:bg-gray-100 rounded-md"
           >
             <Image
