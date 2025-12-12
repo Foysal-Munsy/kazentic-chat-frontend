@@ -7,7 +7,7 @@ import {
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import dmsData from "@/public/dms.json";
-import DmsCard from "./DmsCard";
+import DmsCard from "./chat/dms/DmsCard";
 
 type Post = {
   id: number;
