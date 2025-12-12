@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export default function Sidebar1() {
   return (
-    <aside className="w-[38px] bg-[#111953]  text-white min-h-screen">
-      <div className="flex  flex-col items-center gap-4 mt-1">
+    <aside className="w-[38px] bg-[#111953] text-white min-h-screen flex flex-col">
+      <div className="flex flex-col items-center gap-4 mt-1">
         <button className="bg-linear-to-b from-[#FF9F00] to-[#FDBF00] text-center rounded-[6px] h-6 w-6">
           C
         </button>
@@ -17,6 +19,34 @@ export default function Sidebar1() {
         <button className="text-[#4157FE] text-2xl text-center ">+</button>
         <div className="w-6 h-px bg-gray-500 my-1 rounded" aria-hidden="true" />
         <button className="text-[#4157FE] text-2xl text-center ">+</button>
+      </div>
+
+      {/* Footer buttons */}
+      <div className="mt-auto flex flex-col  items-center mb-4">
+        <button>
+          <Image
+            src="/assets/svg-sidebar/foot-1.svg"
+            alt="footer-1"
+            width={42}
+            height={42}
+          />
+        </button>
+        <button className="-mt-7">
+          <Image
+            src="/assets/svg-sidebar/foot-2.svg"
+            alt="footer-2"
+            width={42}
+            height={42}
+          />
+        </button>
+        <button className="-mt-7">
+          <Image
+            src="/assets/svg-sidebar/foot-3.svg"
+            alt="footer-3"
+            width={42}
+            height={42}
+          />
+        </button>
       </div>
     </aside>
   );
