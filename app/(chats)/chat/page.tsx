@@ -1,7 +1,11 @@
 import { ChatSidebar } from "@/components/chat/ChatSidebar";
+import ConversationArea from "@/components/chat/ConversationArea";
+import {} from "@/components/ui/button-group";
+
 import { Separator } from "@/components/ui/separator";
-import { AttachSquare, Headphone, Notification, Send } from "iconsax-reactjs";
-import { EllipsisVertical, PinIcon } from "lucide-react";
+import { AttachSquare } from "iconsax-reactjs";
+
+import Image from "next/image";
 
 export default function Chat() {
   return (
@@ -10,20 +14,52 @@ export default function Chat() {
       <div className="m-4 flex min-h-[85vh] w-full flex-col rounded-md border bg-white">
         {/* header */}
         <div className="flex items-center justify-between p-4">
+          {/* header-left */}
           <h1 className="text-[#191F38] font-semibold text-[20px]">#General</h1>
+          {/* header-right */}
           <div>
             <div className="flex gap-2 text-[#697588]">
-              <button className="border p-2 rounded-md cursor-pointer">
-                <Headphone size="16" variant="Outline" />
+              <button className="cursor-pointer">
+                <Image
+                  src="/assets/svg/headphone.svg"
+                  alt="call"
+                  width={28}
+                  height={28}
+                />
               </button>
-              <button className="border p-2 rounded-md cursor-pointer">
-                <Notification size={16} variant="Outline" />
+              <button className="cursor-pointer">
+                <Image
+                  src="/assets/svg/pin.svg"
+                  alt="call"
+                  width={28}
+                  height={28}
+                />
               </button>
-              <button className="border p-2 rounded-md cursor-pointer">
-                <PinIcon size={16} />
+              <button className="cursor-pointer">
+                <Image
+                  src="/assets/svg/notification-bell.svg"
+                  alt="call"
+                  width={28}
+                  height={28}
+                />
               </button>
-              <button className="border p-2 rounded-md cursor-pointer">
-                <EllipsisVertical size={16} />
+              {/* separator */}
+              <div className="h-7 w-px bg-[#EBEBEB]" />
+              <button className="cursor-pointer">
+                <Image
+                  src="/assets/svg/group-avatar.svg"
+                  alt="call"
+                  width={64.13}
+                  height={28}
+                />
+              </button>
+              <button className="cursor-pointer">
+                <Image
+                  src="/assets/svg/three-dot.svg"
+                  alt="call"
+                  width={28}
+                  height={28}
+                />
               </button>
             </div>
           </div>
@@ -31,11 +67,7 @@ export default function Chat() {
         <Separator />
 
         {/* middle area */}
-        <div className="flex-1 p-4">
-          <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-[#E2E8F0] text-sm text-[#94A3B8]">
-            Conversation content goes here
-          </div>
-        </div>
+        <ConversationArea />
 
         {/* footer */}
         <div className="p-4">
@@ -57,7 +89,12 @@ export default function Chat() {
               className=" text-[#4157FE]"
               aria-label="Send message"
             >
-              <Send size={18} variant="Bold" />
+              <Image
+                src={"/assets/svg/Send Button.svg"}
+                alt="send-btn"
+                height={18}
+                width={18}
+              />
             </button>
           </div>
         </div>

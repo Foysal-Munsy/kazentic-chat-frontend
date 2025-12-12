@@ -1,6 +1,8 @@
+"use client";
 import { SmilePlus } from "lucide-react";
 import { ScrollArea } from "../ui/scroll-area";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 // const post = [
 //   {
@@ -69,8 +71,29 @@ const posts = [
   },
 ];
 export default function ConversationArea() {
+  const pathname = usePathname();
   return (
     <ScrollArea className="h-[68vh]  p-4 ">
+      {pathname === "/chat" && (
+        <div className="leading-7 mb-10">
+          <div className="flex items-center justify-center rounded-full w-11 h-11 bg-[#F2F9FE] mb-2">
+            <Image
+              src={"/assets/svg/hash.svg"}
+              alt="hash"
+              height={24}
+              width={24}
+            />
+          </div>
+          <h2 className="text-[#191F38] font-semibold text-[18px] leading-7">
+            Welcome to #General!
+          </h2>
+          <p className="text-[#697588] font-medium text-[14px] leading-6">
+            This is the start of the #General channel. This is the only channel
+            that includes everyone. Its a great spot of announcement and
+            team-wide Conversation.
+          </p>
+        </div>
+      )}
       {posts.map((post) => (
         // root
         <div key={post.id} className="grid grid-cols-1 gap-3 mt-4">
@@ -98,7 +121,7 @@ export default function ConversationArea() {
                   : "bg-[#F2F9FE] text-[#191F38]"
               }`}
             >
-              {post.txt}
+              <p className="wrap-break-word max-w-[518px]">{post.txt}</p>
               {post?.reactions && (
                 <div className="flex gap-2">
                   <span className="rounded-[4.85px] bg-white border border-[#EBEBEB]text-center p-1 px-2">
