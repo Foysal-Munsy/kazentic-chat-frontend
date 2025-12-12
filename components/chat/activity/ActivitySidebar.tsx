@@ -11,6 +11,7 @@ import activityData from "@/public/activitydata.json";
 import ActivityCard from "./ActivityCard";
 import NavItem from "@/components/NavItem";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 type Post = {
   id: number;
@@ -77,8 +78,31 @@ export function ActivitySidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <Separator />
       <SidebarFooter>
-        <div className="text-xs ">Footer area</div>
+        <div className="flex justify-between">
+          {/* left */}
+          <div className="flex items-center gap-2">
+            <span className="bg-[#4157FE] w-[30px] h-[30px] rounded-full flex items-center justify-center text-white">
+              A
+            </span>
+            <div>
+              <h3 className="text-[#191F38] font-medium text-[14px]">
+                Alif Hasan
+              </h3>
+              <p className="text-[#00000080] text-[12px] font-medium">
+                alif@deepchainlabs.com
+              </p>
+            </div>
+          </div>
+          {/* right */}
+          <Image
+            src={"/assets/svg-sidebar/ph_plus-bold.svg"}
+            alt="plus"
+            width={16}
+            height={16}
+          />
+        </div>
       </SidebarFooter>
     </Sidebar>
   );
