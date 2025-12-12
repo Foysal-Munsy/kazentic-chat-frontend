@@ -27,10 +27,10 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col">
           <Navbar />
           <SidebarProvider>
-            <div className="flex flex-1">
+            <div className="flex flex-1 overflow-hidden">
               <Sidebar1 />
               <AppSidebar />
-              <main className="flex-1 overflow-y-auto bg-white  ">
+              <main className="flex-1 overflow-y-auto bg-white">
                 {children}
               </main>
             </div>

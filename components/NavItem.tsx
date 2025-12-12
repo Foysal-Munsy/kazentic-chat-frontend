@@ -16,7 +16,7 @@ export default function NavItem({ href, label, icon }: LinkItemProps) {
   return (
     <a
       href={href}
-      className={`px-3 flex flex-row gap-2  cursor-pointer justify-between items-center ${
+      className={`px-3 flex flex-row gap-2 cursor-pointer justify-between items-center h-full ${
         active ? "border-b-[#4157FE] border-b-2 text-[#4157FE]" : ""
       }`}
     >

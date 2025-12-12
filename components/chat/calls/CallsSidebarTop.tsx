@@ -23,7 +23,7 @@ export default function CallsSidebarTop() {
   return (
     <Sidebar
       collapsible="none"
-      className=" h-[232px] m-4 bg-[#FDFDFD] border rounded-[12px] w-[323px] p-[15px]"
+      className="h-[220px] sm:h-[232px] m-2 sm:m-4 bg-[#FDFDFD] border rounded-[12px] w-full lg:w-[280px] xl:w-[323px] p-3 sm:p-[15px]"
     >
       <SidebarHeader className="text-[18px] font-semibold text-[#191F38]">
         Search Friends to call

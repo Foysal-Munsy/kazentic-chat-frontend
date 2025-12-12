@@ -6,19 +6,27 @@ import { Separator } from "@/components/ui/separator";
 import { AttachSquare } from "iconsax-reactjs";
 
 import Image from "next/image";
+import SidebarToggle from "@/components/chat/SidebarToggle";
 
 export default function Chat() {
   return (
-    <div className="flex">
+    <div className="flex relative">
       <ChatSidebar />
-      <div className="m-4 flex min-h-[85vh] w-full flex-col rounded-md border bg-white">
+      <div className="m-2 sm:m-4 flex min-h-[85vh] w-full flex-col rounded-md border bg-white">
         {/* header */}
-        <div className="flex items-center justify-between p-4">
+        <div className="flex items-center justify-between p-2 sm:p-4">
           {/* header-left */}
-          <h1 className="text-[#191F38] font-semibold text-[20px]">#General</h1>
+          <div className="flex items-center gap-2">
+            <SidebarToggle>
+              <ChatSidebar inSheet />
+            </SidebarToggle>
+            <h1 className="text-[#191F38] font-semibold text-base sm:text-lg md:text-[20px]">
+              #General
+            </h1>
+          </div>
           {/* header-right */}
           <div>
-            <div className="flex gap-2 text-[#697588]">
+            <div className="hidden sm:flex gap-2 text-[#697588]">
               <button className="cursor-pointer">
                 <Image
                   src="/assets/svg/headphone.svg"
@@ -62,6 +70,15 @@ export default function Chat() {
                 />
               </button>
             </div>
+            {/* Mobile menu */}
+            <button className="sm:hidden cursor-pointer">
+              <Image
+                src="/assets/svg/three-dot.svg"
+                alt="menu"
+                width={24}
+                height={24}
+              />
+            </button>
           </div>
         </div>
         <Separator />
@@ -70,8 +87,8 @@ export default function Chat() {
         <ConversationArea />
 
         {/* footer */}
-        <div className="p-4">
-          <div className="flex items-center gap-3 rounded-md border border-[#E5E9EB]  px-4 py-2">
+        <div className="p-2 sm:p-4">
+          <div className="flex items-center gap-2 sm:gap-3 rounded-md border border-[#E5E9EB] px-2 sm:px-4 py-2">
             <button
               type="button"
               className="text-[#94A3B8] transition hover:text-[#4157FE]"

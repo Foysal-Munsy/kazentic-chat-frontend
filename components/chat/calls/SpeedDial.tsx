@@ -100,9 +100,9 @@ export default function SpeedDial() {
   return (
     <Sidebar
       collapsible="none"
-      className=" h-[500px] m-4 bg-[#FDFDFD] border rounded-md w-[321px] flex flex-col"
+      className="h-[400px] sm:h-[500px] m-2 sm:m-4 bg-[#FDFDFD] border rounded-md w-full lg:w-[280px] xl:w-[321px] flex flex-col"
     >
-      <div className="w-[292px mx-auto] px-1.5 flex flex-col h-full">
+      <div className="w-full px-4 sm:px-6 lg:w-[292px] lg:mx-auto lg:px-1.5 flex flex-col h-full">
         <SidebarHeader className="text-[18px]  flex flex-row justify-between items-center font-semibold text-[#191F38] shrink-0">
           {header}
 
@@ -142,12 +142,11 @@ export default function SpeedDial() {
             </form>
           </Dialog>
         </SidebarHeader>
-        {/* className="w-[292px] mx-auto" */}
         <SidebarContent className="overflow-y-auto flex-1">
           {posts.map((post) => (
             <div
               key={post.id}
-              className={`flex items-center justify-between px-1.5 py-6 w-[292px] mx-auto h-[37px] ${
+              className={`flex items-center justify-between px-1.5 py-6 w-full lg:w-[292px] lg:mx-auto h-[37px] ${
                 post?.behavior === "default" &&
                 "bg-[#F2F9FE] border border-[#4157FE33] rounded-xl"
               }`}

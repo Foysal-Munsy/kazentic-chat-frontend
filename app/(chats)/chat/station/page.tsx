@@ -30,28 +30,34 @@ export default async function page() {
   const posts = stationData as Station[];
 
   return (
-    <div className="container mx-auto px-4 py-4">
+    <div className="container mx-auto px-2 sm:px-4 py-2 sm:py-4">
       {/* header */}
-      <div className="flex justify-between">
+      <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-0">
         {/* header-left */}
         <div>
-          <h1 className="flex items-center font-semibold">My Station</h1>
+          <h1 className="flex items-center font-semibold text-sm sm:text-base">
+            My Station
+          </h1>
         </div>
         {/* header-right */}
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           {/* btn-1 */}
           <Link
             href="#"
-            className="border border-[#EBEBEB] text-[#4157FE]  gap-2 py-2 px-4 flex items-center rounded-md"
+            className="border border-[#EBEBEB] text-[#4157FE] gap-2 py-2 px-3 sm:px-4 flex items-center justify-center rounded-md text-xs sm:text-sm"
           >
-            Browse Stations <ArrowUpRight size={16} />
+            <span className="hidden sm:inline">Browse Stations</span>
+            <span className="sm:hidden">Browse</span>
+            <ArrowUpRight size={16} />
           </Link>
           {/* btn-2 and related content */}
           <Sheet>
-            <SheetTrigger className="bg-[#4157FE] text-white rounded-md gap-2 py-2 px-4 flex items-center cursor-pointer">
-              <Plus size={16} /> Create New Station
+            <SheetTrigger className="bg-[#4157FE] text-white rounded-md gap-2 py-2 px-3 sm:px-4 flex items-center justify-center cursor-pointer text-xs sm:text-sm">
+              <Plus size={16} />
+              <span className="hidden sm:inline">Create New Station</span>
+              <span className="sm:hidden">Create</span>
             </SheetTrigger>
-            <SheetContent className="w-[550px]">
+            <SheetContent className="w-full sm:w-[550px]">
               <SheetHeader className="">
                 <SheetTitle>Create New Station</SheetTitle>
               </SheetHeader>
@@ -140,7 +146,7 @@ export default async function page() {
         </div>
       </div>
       {/* content */}
-      <div className="mt-8 grid grid-cols-4 gap-4">
+      <div className="mt-4 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
         {Array.isArray(posts) && posts.length > 0 ? (
           posts.map((post, idx) => (
             <Card

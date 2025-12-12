@@ -5,7 +5,6 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarHeader,
-  SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar";
 import { Messages } from "iconsax-reactjs";
@@ -61,7 +60,7 @@ const sidebarItems = [
 
 export function AppSidebar() {
   const messagesCount = 12; // will be props later
-  const { state } = useSidebar();
+  const { state, toggleSidebar } = useSidebar();
   const isCollapsed = state === "collapsed";
 
   return (
@@ -69,7 +68,7 @@ export function AppSidebar() {
       collapsible="none"
       className={cn(
         "min-h-screen rounded-tl-md border-r bg-white transition-[width] duration-300",
-        isCollapsed ? "w-14" : "w-[200px]"
+        isCollapsed ? "w-12 sm:w-14" : "w-[160px] sm:w-[180px] md:w-[200px]"
       )}
     >
       <SidebarHeader
@@ -85,16 +84,26 @@ export function AppSidebar() {
           )}
         >
           {!isCollapsed && (
-            <span className="flex h-7 w-7 items-center justify-center rounded-[6px] bg-[#FDBF00] text-sm font-semibold text-white">
+            <span className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-[6px] bg-[#FDBF00] text-xs sm:text-sm font-semibold text-white">
               C
             </span>
           )}
           {!isCollapsed && (
-            <div className="text-sm font-semibold text-[#1B2559]">
+            <div className="text-xs sm:text-sm font-semibold text-[#1B2559] truncate">
               Carbon Stream
             </div>
           )}
-          <SidebarTrigger />
+          <button
+            onClick={toggleSidebar}
+            className="shrink-0 p-1.5 hover:bg-gray-100 rounded-md"
+          >
+            <Image
+              src={"/assets/svg/expand-left.svg"}
+              alt="toggle"
+              width={16}
+              height={16}
+            />
+          </button>
         </div>
       </SidebarHeader>
       <div className="w-full h-px bg-[#EBEBEB] " />
@@ -114,7 +123,7 @@ export function AppSidebar() {
                 >
                   <div
                     className={cn(
-                      "flex items-center justify-center",
+                      "flex items-center justify-center shrink-0",
                       isCollapsed ? "w-full" : ""
                     )}
                   >
@@ -122,9 +131,9 @@ export function AppSidebar() {
                       <Image
                         src={item.icon}
                         alt={item.label}
-                        width={20}
-                        height={20}
-                        className="shrink-0"
+                        width={18}
+                        height={18}
+                        className="shrink-0 w-[18px] h-[18px] sm:w-5 sm:h-5"
                         style={{
                           filter: isChat
                             ? "none"
@@ -133,16 +142,16 @@ export function AppSidebar() {
                       />
                     ) : (
                       <Messages
-                        size={20}
+                        size={18}
                         color={textColor}
                         variant="Bold"
-                        className="shrink-0"
+                        className="shrink-0 sm:w-5 sm:h-5"
                       />
                     )}
                   </div>
                   {!isCollapsed && (
                     <div
-                      className="rounded-md px-3 py-1 text-sm"
+                      className="rounded-md px-2 sm:px-3 py-1 text-xs sm:text-sm truncate"
                       style={{ color: textColor }}
                     >
                       {item.label}
@@ -150,7 +159,7 @@ export function AppSidebar() {
                   )}
                 </div>
                 {!isCollapsed && item.hasCount && (
-                  <span className="flex items-center justify-center rounded-[6px] bg-[#4157FE] px-2.5 text-white text-[13px] font-normal">
+                  <span className="flex items-center justify-center rounded-[6px] bg-[#4157FE] px-2 sm:px-2.5 text-white text-[11px] sm:text-[13px] font-normal shrink-0">
                     {messagesCount}
                   </span>
                 )}
@@ -161,21 +170,13 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         {!isCollapsed && (
-          <div className="mb-7">
-            {/* custom one */}
-            {/* <div
-              className="w-[178px] h-[129px] border rounded-xl bg-[#F2F9FE]"
-              style={{
-                boxShadow:
-                  "0px 8px 16px 0px rgba(0, 0, 0, 0.08), 0px 0px 4px 0px rgba(0, 0, 0, 0.04)",
-              }}
-            ></div> */}
-            {/* just to ensure the space  */}
+          <div className="mb-5 sm:mb-7 px-2">
             <Image
               src={"/assets/svg-sidebar/footer-frame.svg"}
               alt="image"
               width={200}
               height={150}
+              className="w-full h-auto"
             />
           </div>
         )}

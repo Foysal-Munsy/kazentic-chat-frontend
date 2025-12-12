@@ -4,20 +4,24 @@ import { Separator } from "@/components/ui/separator";
 import { AttachSquare } from "iconsax-reactjs";
 import Image from "next/image";
 import React from "react";
+import SidebarToggle from "@/components/chat/SidebarToggle";
 
 export default function page() {
   const status = "active";
   return (
-    <div className="flex">
+    <div className="flex relative">
       <ActivitySidebar />
       {/* content area */}
       <div className="w-full">
-        <div className="m-4 min-h-[85vh] flex  flex-col rounded-md border bg-white">
+        <div className="m-2 sm:m-4 min-h-[85vh] flex flex-col rounded-md border bg-white">
           {/* header */}
-          <div className="flex items-center justify-between p-4">
+          <div className="flex items-center justify-between p-2 sm:p-4">
             {/* header-left */}
             <div className="flex items-center gap-2">
-              <div className="relative w-8 h-8">
+              <SidebarToggle>
+                <ActivitySidebar inSheet />
+              </SidebarToggle>
+              <div className="relative w-7 h-7 sm:w-8 sm:h-8">
                 <Image
                   className="rounded-full object-cover"
                   src={"https://i.ibb.co.com/6c782gQh/dms-image.png"}
@@ -26,16 +30,16 @@ export default function page() {
                   height={29}
                 />
                 {status === "active" && (
-                  <span className="absolute bottom-0 right-0 block h-3 w-3 rounded-full border-2 border-white bg-[#22C55E]" />
+                  <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full border-2 border-white bg-[#22C55E]" />
                 )}
               </div>
-              <h1 className="text-[#191F38] font-semibold text-[15px]">
+              <h1 className="text-[#191F38] font-semibold text-sm sm:text-[15px]">
                 Riyad Ahsan
               </h1>
             </div>
             {/* header-right */}
             <div>
-              <div className="flex gap-2 text-[#697588]">
+              <div className="hidden sm:flex gap-2 text-[#697588]">
                 <button className="cursor-pointer">
                   <Image
                     src="/assets/svg/call.svg"
@@ -69,6 +73,15 @@ export default function page() {
                   />
                 </button>
               </div>
+              {/* Mobile menu */}
+              <button className="sm:hidden cursor-pointer">
+                <Image
+                  src="/assets/svg/three-dot.svg"
+                  alt="menu"
+                  width={24}
+                  height={24}
+                />
+              </button>
             </div>
           </div>
           <Separator />
@@ -77,8 +90,8 @@ export default function page() {
           <ConversationArea />
 
           {/* footer */}
-          <div className="p-4">
-            <div className="flex items-center gap-3 rounded-md border border-[#E5E9EB]  px-4 py-2">
+          <div className="p-2 sm:p-4">
+            <div className="flex items-center gap-2 sm:gap-3 rounded-md border border-[#E5E9EB] px-2 sm:px-4 py-2">
               <button
                 type="button"
                 className="text-[#94A3B8] transition hover:text-[#4157FE]"

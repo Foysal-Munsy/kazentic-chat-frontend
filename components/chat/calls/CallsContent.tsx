@@ -18,8 +18,8 @@ export default function CallsContent() {
   const [filter, setFilter] = useState<FilterType>("all");
 
   return (
-    <div className=" min-h-[85vh] m-4 bg-[#FDFDFD] border rounded-md w-[827px] ">
-      <div className="w-[796px] mx-auto">
+    <div className="min-h-[85vh] m-2 sm:m-4 bg-[#FDFDFD] border rounded-md flex-1 lg:max-w-[827px]">
+      <div className="w-full px-4 sm:px-6 lg:w-[796px] lg:mx-auto">
         <SidebarHeader className="text-[18px] flex flex-row justify-between items-center font-semibold text-[#191F38] mb-[17px]">
           History
           <DropdownMenu>

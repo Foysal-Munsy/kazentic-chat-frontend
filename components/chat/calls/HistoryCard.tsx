@@ -79,9 +79,9 @@ export default function HistoryCard({ filter }: { filter: FilterType }) {
     <div>
       {filteredPosts.map((post) => (
         <div key={post.id} className="mb-2.5">
-          <div className="flex gap-2 items-center border border-[#EBEBEB] rounded-md p-3 h-[68px]">
+          <div className="flex gap-1.5 sm:gap-2 items-center border border-[#EBEBEB] rounded-md p-2 sm:p-3 min-h-[68px]">
             {/* image */}
-            <div className="flex gap-2">
+            <div className="flex gap-1.5 sm:gap-2 shrink-0">
               {post.line === "red" ? (
                 <div className="border-r-2 border-[#DC2626] h-[50px]"></div>
               ) : post.line === "green" ? (
@@ -90,7 +90,7 @@ export default function HistoryCard({ filter }: { filter: FilterType }) {
                 <div className="border-r-2 border-[#722BCC] h-[50px]"></div>
               )}
 
-              <div className="relative h-11 w-11 shrink-0">
+              <div className="relative h-10 w-10 sm:h-11 sm:w-11 shrink-0">
                 <Image
                   className="rounded-full object-cover"
                   src={post.image}
@@ -110,32 +110,42 @@ export default function HistoryCard({ filter }: { filter: FilterType }) {
               </div>
             </div>
 
-            <div className="flex flex-1 justify-between">
+            <div className="flex flex-1 justify-between min-w-0">
               {/* left content */}
-              <div className="flex flex-col items-start">
-                <h3 className="text-[#191F38] font-semibold text-[14px]">
+              <div className="flex flex-col items-start min-w-0 flex-1">
+                <h3 className="text-[#191F38] font-semibold text-xs sm:text-[14px] truncate w-full">
                   {post.name}
                 </h3>
                 {post.action === "missed" ? (
-                  <p className="text-[#DC2626] font-medium text-[14px] flex gap-2 items-center">
-                    {post.call} <CallMinus size={16} />
+                  <p className="text-[#DC2626] font-medium text-xs sm:text-[14px] flex gap-1 sm:gap-2 items-center">
+                    <span className="hidden sm:inline">{post.call}</span>
+                    <span className="sm:hidden">Missed</span>
+                    <CallMinus size={14} className="sm:w-4 sm:h-4" />
                   </p>
                 ) : post.action === "out" ? (
-                  <p className="text-[#059669] font-medium text-[14px] flex gap-2 items-center">
-                    {post.call} <CallOutgoing size={16} />
+                  <p className="text-[#059669] font-medium text-xs sm:text-[14px] flex gap-1 sm:gap-2 items-center">
+                    <span className="hidden sm:inline">{post.call}</span>
+                    <span className="sm:hidden">Out</span>
+                    <CallOutgoing size={14} className="sm:w-4 sm:h-4" />
                   </p>
                 ) : (
-                  <p className="text-[#722BCC] font-medium text-[14px] flex gap-2 items-center">
-                    {post.call} <CallIncoming size={16} />
+                  <p className="text-[#722BCC] font-medium text-xs sm:text-[14px] flex gap-1 sm:gap-2 items-center">
+                    <span className="hidden sm:inline">{post.call}</span>
+                    <span className="sm:hidden">In</span>
+                    <CallIncoming size={14} className="sm:w-4 sm:h-4" />
                   </p>
                 )}
               </div>
 
               {/* right content */}
-              <div className="text-[#697588] flex flex-col items-end">
-                <p className="font-medium text-[14px] ">{post.date}</p>
+              <div className="text-[#697588] flex flex-col items-end shrink-0 ml-2">
+                <p className="font-medium text-xs sm:text-[14px]">
+                  {post.date}
+                </p>
                 {post?.duration && (
-                  <p className="font-medium text-[14px] ">{post.duration}</p>
+                  <p className="font-medium text-xs sm:text-[14px]">
+                    {post.duration}
+                  </p>
                 )}
               </div>
             </div>
